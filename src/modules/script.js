@@ -20,7 +20,7 @@ const auth = () => {
     profileLink.addEventListener("click", e => {
         e.preventDefault();
 
-        fetch("https://yesno.wtf/api", {
+        fetch("https://mc-l.online/test/api.check-login.php", {
             method: "GET",
             headers: { "Content-Type": "text/plain" },
         })
@@ -31,7 +31,7 @@ const auth = () => {
                 return response.json();
             })
             .then(data => {
-                if (data.answer === "yes") {
+                if (data.auth === "success") {
                     window.location.href = "./profile.html";
                 } else {
                     window.location.href = "./login.html";
